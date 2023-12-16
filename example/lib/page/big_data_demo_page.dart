@@ -64,8 +64,10 @@ class _BigDataChartDemoPageState extends State<BigDataChartDemoPage> {
                   height: 200,
                   child: ChartWidget(
                     coordinateRender: ChartDimensionsCoordinateRender(
-                      crossHair: const CrossHairStyle(adjustHorizontal: true, adjustVertical: true),
-                      margin: const EdgeInsets.only(left: 40, top: 0, right: 0, bottom: 30),
+                      crossHair: const CrossHairStyle(
+                          adjustHorizontal: true, adjustVertical: true),
+                      margin: const EdgeInsets.only(
+                          left: 40, top: 0, right: 0, bottom: 30),
                       padding: const EdgeInsets.only(left: 0, right: 0),
                       // animationDuration: const Duration(milliseconds: 500),
                       yAxis: [YAxis(min: 0, max: 500, drawGrid: true)],
@@ -84,7 +86,8 @@ class _BigDataChartDemoPageState extends State<BigDataChartDemoPage> {
                           strokeWidth: 0,
                           dotRadius: 1,
                           data: dataList,
-                          position: (item) => parserDateTimeToDayValue(item['time'] as DateTime, startTime),
+                          position: (item) => parserDateTimeToDayValue(
+                              item['time'] as DateTime, startTime),
                           values: (item) => [
                             item['value1'] as num,
                           ],

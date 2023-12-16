@@ -9,10 +9,17 @@ import 'page/line_scale_demo_page.dart';
 import 'page/radar_demo_page.dart';
 import 'page/scatter_demo_page.dart';
 import 'page/tween_bar_demo_page.dart';
+import 'page/line_diy_demo.dart';
 
 /// @author JD
 class ChartDemoPage extends StatelessWidget {
-  ChartDemoPage({Key? key}) : super(key: key);
+  const ChartDemoPage({super.key});
+
+  Future<Widget> buildDiyDemoAsync() async {
+    return Future.microtask(() {
+      return const LineChartDiyDemoPage();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -111,6 +118,16 @@ class ChartDemoPage extends StatelessWidget {
               );
             },
             child: const Text('big data'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => const LineChartDiyDemoPage(),
+                ),
+              );
+            },
+            child: const Text('Line Diy'),
           ),
         ],
       ),

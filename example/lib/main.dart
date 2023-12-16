@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'chart_demo_page.dart';
+import 'page/line_diy_demo.dart';
+import 'no_transition.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,8 +28,9 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+        pageTransitionsTheme: NoTransitions(),
       ),
-      home: ChartDemoPage(),
+      home: const ChartDemoPage(),
     );
   }
 }
